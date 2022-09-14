@@ -15,16 +15,14 @@
           Bem-vindo ao TODO Vuetify
         </h1>
 
-        <p class="subheading font-weight-regular">
-          Gerenciando tarefas aprendendo VueJS + Vuetify + API Mock
-        </p>
+        <p class="subheading font-weight-regular">VueJS + Vuetify + API Mock</p>
         <p>
           <v-btn
             x-large
             rounded
-            color="primary"
+            color="green darken-1"
             dark
-            :to="{ name: 'taskList' }"
+            :to="{ name: 'login' }"
           >
             Iniciar
           </v-btn>
