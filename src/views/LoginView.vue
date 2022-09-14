@@ -107,7 +107,7 @@ export default {
     ],
     password: null,
     passwordRules: [
-      (v) => !!v || "A senha é obrigatória",
+      (v) => !!v || "A senha é obrigatória!",
       (v) => (v && v.length >= 5) || "A senha deve conter mais de 5 caracteres",
     ],
     checkbox: false,
