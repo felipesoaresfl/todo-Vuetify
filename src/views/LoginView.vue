@@ -36,14 +36,18 @@
                 v-model="password"
                 :rules="passwordRules"
                 label="Senha"
+                type="password"
                 required
               ></v-text-field>
+
               <v-text-field
-                v-model="password"
-                :rules="passwordRules"
+                v-model="confirmPassword"
+                :rules="[confirmPasswordRules]"
                 label="Confirmar Senha"
+                type="password"
                 required
               ></v-text-field>
+
               <v-checkbox
                 v-model="checkbox"
                 :rules="[(v) => !!v || 'Você deve concordar para continuar!']"
@@ -105,7 +109,8 @@ export default {
       (v) => !!v || "O e-mail é obrigatório",
       (v) => /.+@.+\..+/.test(v) || "E-mail inválido",
     ],
-    password: null,
+    confirmPassword: "",
+    password: "",
     passwordRules: [
       (v) => !!v || "A senha é obrigatória!",
       (v) => (v && v.length >= 5) || "A senha deve conter mais de 5 caracteres",
@@ -115,6 +120,15 @@ export default {
   methods: {
     validate() {
       this.$refs.form.validate();
+    },
+    login() {
+      this.loading = true;
+    },
+    confirmPasswordRules() {
+      if (this.confirmedPassword == "") {
+        return "A senha é obrigatória!";
+      }
+      return true;
     },
   },
 };

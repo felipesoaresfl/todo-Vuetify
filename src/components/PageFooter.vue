@@ -1,17 +1,3 @@
-<!-- <template>
-
-        <p>
-          <v-btn
-            icon
-            color="white"
-            href="https://github.com/felipesoaresfl/todo-Vuetify"
-          >
-            <v-icon>fa-brands fa-github</v-icon>
-          </v-btn>
-        </p>
-
-</template> -->
-
 <template>
   <v-footer dark padless fixed color="green darken-1">
     <v-card flat tile class="green darken-1 white--text text-center mx-auto">
@@ -31,7 +17,8 @@
       </v-card-text>
 
       <v-card-text class="white--text"
-        >Copyright® {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        >Copyright® {{ new Date().getFullYear() }} —
+        <strong>Felipe Soares</strong>
       </v-card-text>
     </v-card>
   </v-footer>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import PageFooter from "../components/PageFooter.vue";
+import PageFooter from "@/components/PageFooter.vue";
 export default {
   data: () => ({}),
   components: {

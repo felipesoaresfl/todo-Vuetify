@@ -52,6 +52,14 @@ export default {
           id: 4,
           title: "Task Four",
         },
+        {
+          id: 5,
+          title: "Task Cinco",
+        },
+        {
+          id: 6,
+          title: "Tarefa six",
+        },
       ],
     };
   },
