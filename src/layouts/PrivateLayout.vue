@@ -1,9 +1,11 @@
 <template>
-  <v-main>
+  <div>
     <PageBar />
-    <router-view />
+    <v-main class="heightNav">
+      <router-view />
+    </v-main>
     <PageFooter />
-  </v-main>
+  </div>
 </template>
 
 <script>
@@ -17,3 +19,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.heightNav {
+  min-height: calc(100vh - 122px - 42px);
+}
+</style>

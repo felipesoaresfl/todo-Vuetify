@@ -1,8 +1,10 @@
 <template>
-  <v-main>
-    <router-view />
+  <div>
+    <v-main class="heightFooter">
+      <router-view />
+    </v-main>
     <PageFooter />
-  </v-main>
+  </div>
 </template>
 
 <script>
@@ -14,3 +16,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.heightFooter {
+  min-height: calc(100vh - 122px);
+}
+</style>
