@@ -114,7 +114,7 @@ export default {
     confirmPassword: "",
     password: "",
     passwordRules: [
-      (v) => !!v || "A senha é obrigatória!",
+      (v) => !!v || "A senha é obrigatória.",
       (v) => (v && v.length > 5) || "A senha deve conter mais de 5 caracteres",
     ],
     checkbox: false,
@@ -137,7 +137,7 @@ export default {
       if (this.confirmPassword) {
         return true;
       } else {
-        return "A confirmação de senha é obrigatória!";
+        return "A confirmação de senha é obrigatória.";
       }
     },
     min6() {
