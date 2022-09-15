@@ -16,7 +16,10 @@ module.exports = {
   },
   add: (req, res) => {
     const { title, project, status } = req.body;
-    const id = data.tasks.length + 1;
+    const id =
+      data.tasks[data.tasks.length].id === undefined
+        ? 1
+        : data.tasks[data.tasks.length].id + 1;
     const newTask = {
       id,
       title,
@@ -41,7 +44,7 @@ module.exports = {
   },
   remove: (req, res) => {
     const { id } = req.params;
-    const task = data.tasks.find((t) => t.id === id);
+    const task = data.tasks.find((t) => t.id == id);
     const index = data.tasks.indexOf(task);
     data.tasks.splice(index, 1);
     res.send(task);

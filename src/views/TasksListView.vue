@@ -18,7 +18,7 @@
                     :to="{ name: 'taskUpdate', params: { id: task.id } }"
                     ><v-icon>fas fa-pen fa-xs</v-icon></v-btn
                   >
-                  <v-btn x-small icon color="green"
+                  <v-btn x-small icon color="red" @click="deleteTask(task.id)"
                     ><v-icon>far fa-trash-alt fa-xs</v-icon></v-btn
                   >
                 </v-row>
@@ -32,36 +32,28 @@
 </template>
 
 <script>
+import TasksApi from "@/api/tasks.api.js";
+
 export default {
   data: () => {
     return {
-      tasks: [
-        {
-          id: 1,
-          title: "Task 1",
-        },
-        {
-          id: 2,
-          title: "Task Two",
-        },
-        {
-          id: 3,
-          title: "Task 3",
-        },
-        {
-          id: 4,
-          title: "Task Four",
-        },
-        {
-          id: 5,
-          title: "Task Cinco",
-        },
-        {
-          id: 6,
-          title: "Tarefa six",
-        },
-      ],
+      tasks: [],
     };
+  },
+  methods: {
+    getTasks() {
+      TasksApi.getTasks().then((data) => {
+        this.tasks = data;
+      });
+    },
+    deleteTask(taskId) {
+      TasksApi.removeTask(taskId).then(() => {
+        this.getTasks();
+      });
+    },
+  },
+  created() {
+    this.getTasks();
   },
 };
 </script>
