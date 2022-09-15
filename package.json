@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "apimock": "json-server -w api/mock/db.json"
+    "apimock": "json-server -w api/mock/server/db.json"
   },
   "dependencies": {
     "axios": "^0.27.2",

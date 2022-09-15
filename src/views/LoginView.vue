@@ -21,7 +21,7 @@
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
                 v-model="name"
-                :counter="10"
+                :counter="20"
                 :rules="nameRules"
                 label="Nome"
                 required
@@ -42,7 +42,7 @@
 
               <v-text-field
                 v-model="confirmPassword"
-                :rules="[confirmPasswordRules]"
+                :rules="[required, min6, matchingPasswords]"
                 label="Confirmar Senha"
                 type="password"
                 required
@@ -97,6 +97,8 @@
 <script>
 export default {
   data: () => ({
+    successPass: false,
+    successPass1: false,
     tabsForm: null,
     valid: true,
     name: "",
@@ -113,7 +115,7 @@ export default {
     password: "",
     passwordRules: [
       (v) => !!v || "A senha é obrigatória!",
-      (v) => (v && v.length >= 5) || "A senha deve conter mais de 5 caracteres",
+      (v) => (v && v.length > 5) || "A senha deve conter mais de 5 caracteres",
     ],
     checkbox: false,
   }),
@@ -124,11 +126,26 @@ export default {
     login() {
       this.loading = true;
     },
-    confirmPasswordRules() {
-      if (this.confirmedPassword == "") {
-        return "A senha é obrigatória!";
+    matchingPasswords() {
+      if (this.password === this.confirmPassword) {
+        return true;
+      } else {
+        return "As senhas não são iguais.";
       }
-      return true;
+    },
+    required() {
+      if (this.confirmPassword) {
+        return true;
+      } else {
+        return "A confirmação de senha é obrigatória!";
+      }
+    },
+    min6() {
+      if (this.confirmPassword.length >= 6) {
+        return true;
+      } else {
+        return "A senha deve conter mais de 5 caracteres.";
+      }
     },
   },
 };
