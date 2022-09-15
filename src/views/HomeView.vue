@@ -8,7 +8,7 @@
             :src="require('../assets/todo-icon.png')"
             class="my-3"
             contain
-            height="200"
+            height="300"
           />
         </v-col>
 
@@ -24,11 +24,12 @@
             <v-btn
               x-large
               rounded
+              :elevation="10"
               color="green darken-1"
               dark
               :to="{ name: 'login' }"
             >
-              Iniciar
+              Começar!
             </v-btn>
           </p>
         </v-col>
