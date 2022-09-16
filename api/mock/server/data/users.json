@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "name": "Jorge Oliva",
-    "username": "jorge",
-    "email": "jorgeo@example.com"
+    "name": "Felipe Soares",
+    "username": "fezaum",
+    "email": "feza@parmera.com"
   },
   {
     "id": 2,
-    "name": "John Doe",
-    "username": "john",
-    "email": "jd@example.com"
+    "name": "Michael Jackson",
+    "username": "michelzin",
+    "email": "mj@hihi.com"
   }
 ]
