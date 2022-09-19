@@ -37,12 +37,14 @@
                 :rules="nameRules"
                 label="Nome"
                 required
+                v-on:keyup.enter="register"
               ></v-text-field>
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
                 label="E-mail"
                 required
+                v-on:keyup.enter="register"
               ></v-text-field>
               <v-text-field
                 v-model="username"
@@ -50,7 +52,7 @@
                 :counter="20"
                 required
                 :rules="usernameRules"
-                v-on:keyup.enter="login"
+                v-on:keyup.enter="register"
               ></v-text-field>
               <v-text-field
                 v-model="password"
@@ -58,6 +60,7 @@
                 label="Senha"
                 type="password"
                 required
+                v-on:keyup.enter="register"
               ></v-text-field>
 
               <v-text-field
@@ -79,7 +82,7 @@
                 color="success"
                 class="mr-4"
                 :loading="loading"
-                @click="validate"
+                @click="[register, validate]"
                 :to="{ name: 'taskList' }"
               >
                 Cadastrar
@@ -161,6 +164,24 @@ export default {
     validate() {
       this.$refs.form.validate();
     },
+    //cadastrar usuário
+    singup() {
+      this.loading = true;
+      AuthApi.signup(this.username, this.name, this.email, this.password)
+        .then((user) => {
+          console.log("login ok", user);
+          this.saveLoggedUser(user);
+          this.$router.push({ name: "taskSummary" });
+        })
+        .catch((error) => {
+          console.log("login falhou", error);
+          this.snackbar.message = "Usuário ou senha inválidos!";
+          this.snackbar.show = true;
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    },
     //logar usuário
     login() {
       this.loading = true;
@@ -168,7 +189,7 @@ export default {
         .then((user) => {
           console.log("login ok", user);
           this.saveLoggedUser(user);
-          this.$router.push({ name: "taskList" });
+          this.$router.push({ name: "taskSummary" });
         })
         .catch((error) => {
           console.log("login falhou", error);
