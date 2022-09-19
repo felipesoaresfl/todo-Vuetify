@@ -3,7 +3,7 @@
     <v-snackbar
       v-model="snackbar.show"
       :value="true"
-      color="green darken-1"
+      color="#F44336"
       absolute
       left
       shaped
@@ -129,28 +129,28 @@ export default {
     successPass1: false,
     tabsForm: null,
     valid: true,
-    name: "",
-    username: "",
-    email: "",
     confirmPassword: "",
-    password: "",
     loading: false,
     snackbar: {
       show: false,
       message: "",
     },
+    name: "",
     nameRules: [
       (v) => !!v || "Nome é obrigatório",
       (v) => (v && v.length <= 30) || "Nome deve conter menos de 30 caracteres",
     ],
+    username: "",
     usernameRules: [
       (v) => !!v || "Usuário é obrigatório",
       (v) => (v && v.length <= 20) || "Nome deve conter menos de 20 caracteres",
     ],
+    email: "",
     emailRules: [
       (v) => !!v || "O e-mail é obrigatório",
       (v) => /.+@.+\..+/.test(v) || "E-mail inválido",
     ],
+    password: "",
     passwordRules: [
       (v) => !!v || "A senha é obrigatória.",
       (v) => (v && v.length > 5) || "A senha deve conter mais de 5 caracteres",
