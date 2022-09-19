@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "@/views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
+import TaskSummaryView from "@/views/TaskSummaryView.vue";
 import TasksListView from "@/views/TasksListView.vue";
 import TasksUpdateView from "@/views/TasksUpdateView.vue";
 import PublicLayout from "@/layouts/PublicLayout.vue";
@@ -30,6 +31,11 @@ const routes = [
     path: "/tasks",
     component: PrivateLayout,
     children: [
+      {
+        path: "summary",
+        name: "taskSummary",
+        component: TaskSummaryView,
+      },
       {
         path: ":id",
         name: "taskUpdate",
