@@ -21,7 +21,7 @@
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
+          <v-list-item-title>{{ getLoggedUser.username }}</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -52,6 +52,13 @@ export default {
         { title: "About", icon: "mdi-forum" },
       ],
     };
+  },
+  computed: {
+    getLoggedUser() {
+      const userStr = localStorage.getItem("user");
+      const user = JSON.parse(userStr);
+      return user;
+    },
   },
 };
 </script>

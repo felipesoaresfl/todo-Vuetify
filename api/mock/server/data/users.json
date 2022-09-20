@@ -10,5 +10,11 @@
     "name": "Michael Jackson",
     "username": "m",
     "email": "mj@hihi.com"
+  },
+  {
+    "id": 3,
+    "name": "Neymar Jr",
+    "username": "neyney",
+    "email": "ney@hexa.com"
   }
 ]

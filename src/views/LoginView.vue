@@ -201,6 +201,7 @@ export default {
     },
     //salvar usuário logado no localstorage
     saveLoggedUser(user) {
+      window.localStorage.setItem("user", JSON.stringify(user));
       window.localStorage.setItem("loggedUser", user.id);
       window.localStorage.setItem("loggedUserToken", user.token);
     },
