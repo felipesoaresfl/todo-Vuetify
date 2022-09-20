@@ -38,5 +38,13 @@
     "status": "pending",
     "date": "2022-09-15T17:06:26.748Z",
     "userId": 2
+  },
+  {
+    "id": 6,
+    "title": "Pagar figurinha da copa",
+    "project": "Contas",
+    "status": "done",
+    "date": null,
+    "userId": 1
   }
 ]

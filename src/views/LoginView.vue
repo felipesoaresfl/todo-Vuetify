@@ -29,7 +29,7 @@
     <v-row class="d-flex justify-center">
       <v-col cols="4">
         <v-tabs-items v-model="tabsForm" cols="3">
-          <v-tab-item>
+          <v-tab-item key="registerForm">
             <v-form ref="form" v-model="valid" lazy-validation>
               <v-text-field
                 v-model="name"
@@ -37,14 +37,14 @@
                 :rules="nameRules"
                 label="Nome"
                 required
-                v-on:keyup.enter="register"
+                v-on:keyup.enter="signupUser"
               ></v-text-field>
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
                 label="E-mail"
                 required
-                v-on:keyup.enter="register"
+                v-on:keyup.enter="signupUser"
               ></v-text-field>
               <v-text-field
                 v-model="username"
@@ -52,7 +52,7 @@
                 :counter="20"
                 required
                 :rules="usernameRules"
-                v-on:keyup.enter="register"
+                v-on:keyup.enter="signupUser"
               ></v-text-field>
               <v-text-field
                 v-model="password"
@@ -60,7 +60,7 @@
                 label="Senha"
                 type="password"
                 required
-                v-on:keyup.enter="register"
+                v-on:keyup.enter="signupUser"
               ></v-text-field>
 
               <v-text-field
@@ -82,14 +82,13 @@
                 color="success"
                 class="mr-4"
                 :loading="loading"
-                @click="[register, validate]"
-                :to="{ name: 'taskList' }"
+                @click="signupUser"
               >
                 Cadastrar
               </v-btn>
             </v-form>
           </v-tab-item>
-          <v-tab-item key="register">
+          <v-tab-item key="loginForm">
             <v-form class="text-center white">
               <v-text-field
                 v-model="username"
@@ -165,17 +164,17 @@ export default {
       this.$refs.form.validate();
     },
     //cadastrar usuário
-    singup() {
+    signupUser() {
       this.loading = true;
       AuthApi.signup(this.username, this.name, this.email, this.password)
         .then((user) => {
-          console.log("login ok", user);
-          this.saveLoggedUser(user);
-          this.$router.push({ name: "taskSummary" });
+          console.log("cadastro feito ok", user);
+          this.snackbar.message = "Cadastro realizado com sucesso!";
+          this.snackbar.show = true;
         })
         .catch((error) => {
-          console.log("login falhou", error);
-          this.snackbar.message = "Usuário ou senha inválidos!";
+          console.log("cadastro falhou", error);
+          this.snackbar.message = "Cadastro falhou, tente novamente..";
           this.snackbar.show = true;
         })
         .finally(() => {
