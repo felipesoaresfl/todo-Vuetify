@@ -12,13 +12,18 @@
               <v-list-item class="grow">
                 <v-row align="center" justify="end">
                   <v-btn
-                    x-small
-                    icon
-                    color="grey"
+                    class="mx-3"
+                    fab
+                    dark
+                    small
+                    alt="Editar tarefa"
+                    color="cyan"
                     :to="{ name: 'taskUpdate', params: { id: task.id } }"
-                    ><v-icon>fas fa-pen fa-xs</v-icon></v-btn
                   >
-                  <v-btn x-small icon color="red" @click="deleteTask(task.id)"
+                    <v-icon dark> mdi-pencil </v-icon>
+                  </v-btn>
+
+                  <v-btn small fab dark color="red" @click="deleteTask(task.id)"
                     ><v-icon>far fa-trash-alt fa-xs</v-icon></v-btn
                   >
                 </v-row>
