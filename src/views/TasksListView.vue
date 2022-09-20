@@ -32,6 +32,11 @@
           </v-card>
         </v-col>
       </v-row>
+      <div class="my-5">
+        <v-btn color="green" fab dark :to="{ name: 'taskForms' }">
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+      </div>
     </v-container>
   </v-main>
 </template>

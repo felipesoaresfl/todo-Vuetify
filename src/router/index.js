@@ -4,7 +4,8 @@ import HomeView from "@/views/HomeView.vue";
 import LoginView from "@/views/LoginView.vue";
 import TaskSummaryView from "@/views/TaskSummaryView.vue";
 import TasksListView from "@/views/TasksListView.vue";
-import TasksUpdateView from "@/views/TasksUpdateView.vue";
+import TasksUpdateView from "@/views/TaskUpdateView.vue";
+import TaskFormsView from "@/views/TaskFormView.vue";
 import PublicLayout from "@/layouts/PublicLayout.vue";
 import PrivateLayout from "@/layouts/PrivateLayout.vue";
 
@@ -45,6 +46,11 @@ const routes = [
         path: "",
         name: "taskList",
         component: TasksListView,
+      },
+      {
+        path: "/forms",
+        name: "taskForms",
+        component: TaskFormsView,
       },
     ],
   },
