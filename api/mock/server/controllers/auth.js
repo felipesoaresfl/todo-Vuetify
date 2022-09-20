@@ -47,9 +47,7 @@ module.exports = {
       const { username, name, email, password } = req.body;
       const newUser = addUser(username, name, email, password);
       res.send(newUser);
-      console.log("cheguei no add auth.js");
     } catch (error) {
-      console.log("falhei no add auth.js");
       res.status(404).end(error);
     }
   },

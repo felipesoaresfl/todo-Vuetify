@@ -4,6 +4,7 @@
       v-model="snackbar.show"
       :value="true"
       color="#F44336"
+      timeout="2000"
       absolute
       left
       shaped
@@ -169,12 +170,14 @@ export default {
       AuthApi.signup(this.username, this.name, this.email, this.password)
         .then((user) => {
           console.log("cadastro feito ok", user);
-          this.snackbar.message = "Cadastro realizado com sucesso!";
+          this.snackbar.color = "confirm";
+          this.snackbar.message =
+            "Cadastro realizado com sucesso! Faça o login";
           this.snackbar.show = true;
         })
         .catch((error) => {
           console.log("cadastro falhou", error);
-          this.snackbar.message = "Cadastro falhou, tente novamente..";
+          this.snackbar.message = "Cadastro falhou, tente novamente...";
           this.snackbar.show = true;
         })
         .finally(() => {

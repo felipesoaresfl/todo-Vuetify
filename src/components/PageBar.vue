@@ -14,7 +14,7 @@
       </v-btn>
 
       <v-btn icon color="white">
-        <v-icon>mdi-logout</v-icon>
+        <v-icon @click="loggingOut">mdi-logout</v-icon>
       </v-btn>
     </v-toolbar>
 
@@ -71,6 +71,12 @@ export default {
         { title: "Category", icon: "mdi-shape", routes: "taskSummary" },
       ],
     };
+  },
+  methods: {
+    loggingOut() {
+      localStorage.clear();
+      this.$router.push({ name: "home" });
+    },
   },
   computed: {
     getLoggedUser() {
