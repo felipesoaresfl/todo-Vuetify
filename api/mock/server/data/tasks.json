@@ -2,7 +2,8 @@
   {
     "id": 1,
     "title": "Estudar Vuetify",
-    "project": "Estudos",
+    "category": "Estudos",
+    "description": "Ver videos e documertações do Vuefity",
     "status": "done",
     "date": null,
     "userId": 1
@@ -10,7 +11,8 @@
   {
     "id": 2,
     "title": "Estudar Vuex",
-    "project": "Estudos",
+    "category": "Estudos",
+    "description": "Ver videos e documertações do VueX",
     "status": "pending",
     "date": null,
     "userId": 1
@@ -18,7 +20,8 @@
   {
     "id": 3,
     "title": "Estudar Djavue",
-    "project": "Estudos",
+    "category": "Estudos",
+    "description": "Ver videos e documertações do Djavue",
     "status": "pending",
     "date": null,
     "userId": 1
@@ -26,7 +29,8 @@
   {
     "id": 4,
     "title": "Pagar Volei",
-    "project": "Contas",
+    "category": "Contas",
+    "description": "Pagar o volei de quarta-feira",
     "status": "pending",
     "date": "2022-09-15T17:06:26.748Z",
     "userId": 1
@@ -34,7 +38,8 @@
   {
     "id": 5,
     "title": "Estudar Django",
-    "project": "Estudos",
+    "category": "Estudos",
+    "description": "Ver videos e documertações do Django",
     "status": "pending",
     "date": "2022-09-15T17:06:26.748Z",
     "userId": 2
@@ -42,7 +47,8 @@
   {
     "id": 6,
     "title": "Pagar figurinha da copa",
-    "project": "Contas",
+    "category": "Contas",
+    "description": "Pagar figurinhas da copa compradas na casas bahia",
     "status": "done",
     "date": null,
     "userId": 1

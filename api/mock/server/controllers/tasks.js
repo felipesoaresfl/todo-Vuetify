@@ -28,12 +28,12 @@ module.exports = {
     if (!loggedUser) {
       return;
     }
-    const { title, project, status } = req.body;
+    const { title, category, status } = req.body;
     const id = getMaxId(data.tasks) + 1;
     const newTask = {
       id,
       title,
-      project,
+      category,
       status,
       userId: loggedUser.id,
     };
@@ -51,9 +51,9 @@ module.exports = {
       res.status(404).end();
       return;
     }
-    const { title, project, status } = req.body;
+    const { title, category, status } = req.body;
     task.title = title;
-    task.project = project;
+    task.category = category;
     task.status = status;
     res.send(task);
   },
@@ -76,7 +76,7 @@ module.exports = {
     let taskSummary = {};
     const userTasks = data.tasks.filter((t) => t.userId == loggedUser.id);
     for (let task of userTasks) {
-      const key = task.project;
+      const key = task.category;
       if (!taskSummary.hasOwnProperty(key)) {
         taskSummary[key] = {
           pending: 0,
